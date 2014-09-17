@@ -45,7 +45,7 @@ public class Contact implements Serializable {
 	private User user;
 
 	@OneToMany(mappedBy="contact")
-    private List<PhoneNumber> phoneNumbers;
+	private List<PhoneNumber> phoneNumbers;
 	
 	@Column(name="created", updatable=false)
 	private Date created;
