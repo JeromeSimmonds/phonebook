@@ -28,6 +28,8 @@ Install the parent project: with the command line go to the the phonebook direct
 
 Update your Maven settings: add the properties jdbc.phonebook.username, jdbc.phonebook.password and jdbc.phonebook.url. Ideally you should have at least 2 different profiles, test and development.  
 
+Rename phonebook-core/src/test/resources/db.properties.sample to db.properties and change the properties accordingly.  
+
 Reset the test database: with the command line, in phonebook-core, run  
 ```mvn db-migration:reset -Ptest```
 
