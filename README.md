@@ -19,3 +19,8 @@ JDK 1.6 or above, Maven, MySQL 5.x
 * **phonebook** Maven parent project
 * **phonebook** Back-end project dealing with the database. It consists of 3 layers: the domain model (business entities), the service layer (business objects) and the data layer (data access object).
 * **phonebook-web** Front-end project (website). Consists of controllers, forms and views. Relies on the core project to deal with data and present it to the user to interact with it.
+Web service coming soon
+
+## Installation
+Install the parent project, run
+```mvn clean install```
