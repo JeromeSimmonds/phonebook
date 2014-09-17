@@ -26,9 +26,9 @@ Web service coming soon
 Install the parent project: with the command line go to the the phonebook directory (phonebook/phonebook), then run  
 ```mvn clean install```
 
-Update your Maven settings, add the properties jdbc.phonebook.username, jdbc.phonebook.password and jdbc.phonebook.url. Ideally you should have at least 2 different profiles, test and development.  
+Update your Maven settings: add the properties jdbc.phonebook.username, jdbc.phonebook.password and jdbc.phonebook.url. Ideally you should have at least 2 different profiles, test and development.  
 
-Reset the test database: with the command line, in phonebook-core, run.  
+Reset the test database: with the command line, in phonebook-core, run  
 ```mvn db-migration:reset -Ptest```
 
 Install the core project: with the command line, in phonebook-core, run  
