@@ -1,0 +1,82 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	
+	<groupId>com.jeromesimmonds</groupId>
+	<artifactId>phonebook</artifactId>
+	<packaging>pom</packaging>
+	<version>1.0.0</version>
+	
+	<name></name>
+	<url></url>
+
+	<profiles>
+		<profile>
+			<id>development</id>
+			<properties>
+				<java.compiler.showWarnings>true</java.compiler.showWarnings>
+				<java.compiler.debug>true</java.compiler.debug>
+				<java.compiler.optimize>false</java.compiler.optimize>
+			</properties>
+		</profile>
+	</profiles>
+	
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	
+		<!-- dependencies -->
+		<junit.version>4.11</junit.version>
+		<easymock.version>3.2</easymock.version>
+		<logback.version>1.0.11</logback.version>
+		<slf4j.version>1.7.4</slf4j.version>
+		
+		<!-- plugins -->
+		<maven-compiler-plugin.version>3.1</maven-compiler-plugin.version>
+	</properties>
+	
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${maven-compiler-plugin.version}</version>
+				<configuration>
+					<source>1.6</source>
+					<target>1.6</target>		
+					<encoding>UTF-8</encoding>
+					<showDeprecation>true</showDeprecation>
+					<fork>false</fork>
+					<showWarnings>${java.compiler.showWarnings}</showWarnings>
+					<debug>${java.compiler.debug}</debug>
+					<optimize>${java.compiler.optimize}</optimize>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<dependencies>
+		<!-- testing -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junit.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.easymock</groupId>
+			<artifactId>easymock</artifactId>
+			<version>${easymock.version}</version>
+			<scope>test</scope>
+		</dependency>
+		
+		<!-- logging -->
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+			<version>${logback.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>${slf4j.version}</version>
+		</dependency>
+	</dependencies>
+</project>
