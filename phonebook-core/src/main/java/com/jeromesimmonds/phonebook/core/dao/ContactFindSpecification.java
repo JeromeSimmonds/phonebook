@@ -47,10 +47,13 @@ public class ContactFindSpecification extends AbstractFindSpecification<Contact>
 		switch (findSort) {
 			case Alpha:
 				orders.add(new Order(Sort.Direction.ASC, Contact_.lastName.getName()));
+				break;
 			case RevAlpha:
 				orders.add(new Order(Sort.Direction.DESC, Contact_.lastName.getName()));
+				break;
 			case MostRecent:
 				orders.add(new Order(Sort.Direction.ASC, Contact_.id.getName()));
+				break;
 			default:
 				throw new SortNotSupportedException(findSort);
 		}

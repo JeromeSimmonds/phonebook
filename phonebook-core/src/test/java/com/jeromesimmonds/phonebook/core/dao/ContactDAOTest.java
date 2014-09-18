@@ -17,6 +17,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.jeromesimmonds.phonebook.core.be.Contact;
 import com.jeromesimmonds.phonebook.core.be.FindFilterType;
 import com.jeromesimmonds.phonebook.core.be.FindParameters;
+import com.jeromesimmonds.phonebook.core.be.FindSort;
 
 /**
  * @author Jerome Simmonds
@@ -60,7 +61,8 @@ public class ContactDAOTest extends AbstractDAOTest {
 	@Test
 	public void search() throws Exception {
 		FindParameters params = new FindParameters(1, 10)
-			.with(FindFilterType.User, TestData.USER_1);
+			.with(FindFilterType.User, TestData.USER_1)
+			.with(FindSort.Alpha);
 		List<Contact> results = dao.findAll(new ContactFindSpecification(params));
 		assertNotNull(results);
 		assertEquals(2, results.size());

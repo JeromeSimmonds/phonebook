@@ -54,10 +54,10 @@ public class TestData {
 		PHONE_NUMBER_1.setType(PhoneNumber.TYPE_HOME);
 		PHONE_NUMBER_2.setNumber("917 123 4567");
 		PHONE_NUMBER_2.setContact(CONTACT_1);
-		PHONE_NUMBER_2.setType(PhoneNumber.TYPE_CELLPHONE);
+		PHONE_NUMBER_2.setType(PhoneNumber.TYPE_MOBILE);
 		PHONE_NUMBER_3.setNumber("818 123 4567");
 		PHONE_NUMBER_3.setContact(CONTACT_2);
-		PHONE_NUMBER_3.setType(PhoneNumber.TYPE_CELLPHONE);
+		PHONE_NUMBER_3.setType(PhoneNumber.TYPE_MOBILE);
 		PHONE_NUMBER_4.setNumber("212 987 1234");
 		PHONE_NUMBER_4.setContact(CONTACT_3);
 		PHONE_NUMBER_4.setType(PhoneNumber.TYPE_HOME);

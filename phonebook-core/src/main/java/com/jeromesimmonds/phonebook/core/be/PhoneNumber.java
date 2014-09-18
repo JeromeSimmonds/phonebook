@@ -25,7 +25,7 @@ public class PhoneNumber implements Serializable {
 	private static final long serialVersionUID = 1747167513588689578L;
 
 	public static final int TYPE_HOME = 1;
-	public static final int TYPE_CELLPHONE = 2;
+	public static final int TYPE_MOBILE = 2;
 	public static final int TYPE_OFFICE = 3;
 	public static final int TYPE_OTHER = 4;
 	

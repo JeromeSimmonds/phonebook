@@ -41,8 +41,8 @@ public class ContactBOImpl extends AbstractBO<Contact, Integer, ContactDAO> impl
 	@Override
 	public List<Contact> findByLastName(String lastName, User user) {
 		FindParameters params = new FindParameters(1, 100)
-		.with(FindFilterType.LastName, lastName)
-		.with(FindFilterType.User, user);
-	return getDAO().findAll(newSpecification(params));
+			.with(FindFilterType.LastName, lastName)
+			.with(FindFilterType.User, user);
+		return getDAO().findAll(newSpecification(params));
 	}
 }
