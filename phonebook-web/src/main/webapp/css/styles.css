@@ -1,0 +1,270 @@
+body {padding-top: 60px; padding-bottom: 60px;	color: #333}
+
+a {color: #1A69CE; text-decoration: none}
+a:hover {color: #1A69CE; text-decoration: underline}
+
+h1 {font-size: 1.6em}
+
+h2 {margin: 0; font-size: 1.2em}
+
+h1 span, h2 span {font-weight: normal; font-size: 90%}
+
+h1 a.button {margin-left: 5px}
+
+h3 {margin: 0 0 12px 0}
+
+.left {float: left}
+.right {float: right}
+.center {text-align: center}
+.small {font-size: small}
+
+.mt25 {margin-top: 25px}
+
+header {
+/* 	min-height: 35px; */
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	background-color: #CCC;
+	overflow: visible;
+	border-bottom: 5px solid #EFEFEF;
+	padding: 0;
+}
+
+header:after {
+	content: "";
+	position: absolute;
+/*     top:20px; */
+    left:0;
+    right:0;
+    bottom: -25px;
+	height: 20px;
+    background: url(/img/header-gradient.png) repeat-x;
+}
+
+.headerGradient {
+	border-top: 5px solid #EFEFEF;
+	height: 10px;
+	background-image: url(/img/header-gradient.png) repeat-x;
+}
+
+ul.nav {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+ul.nav li {
+/* 	display: list-item; */
+	float: left;
+/* 	padding: 5px; */
+}
+
+ul.nav li a {
+	display: block;
+	text-decoration: none;
+	border: 2px solid #CCC;
+}
+
+ul.nav li.liUsername {
+	font-size: 0.8em;
+	line-height: 2em;
+	padding: 5px;
+	color: #333;
+}
+
+header li a {
+	color: #FFF;
+	font-weight: bold;
+	padding: 5px;
+}
+
+.btnHome { width: 20px;	height: 21px; background: url(/img/home.png) no-repeat center center }
+.btnHome:hover, .btnHome.active { background-image: url(/img/home-on.png) }
+.btnHome span {display: none}
+
+.btnConnect { width: 22px;	height: 21px; background: url(/img/connect.png) no-repeat center center }
+.btnConnect:hover, .btnConnect.active { background-image: url(/img/connect-on.png) }
+.btnConnect span {display: none}
+
+.container {
+	width: 92%;
+	margin-right: auto;
+	margin-left: auto;
+	overflow: visible;
+}
+
+ul.ulContent {
+	list-style: none;
+	margin: 0;
+	margin-bottom: 20px;
+	padding: 0;
+	border-bottom: 1px solid #EFEFEF;
+	overflow: auto;
+}
+
+ul.ulContent li {
+/* 	display: list-item; */
+/*	float: left; */
+	display: inline-block;
+	background-color: #EFEFEF;
+	margin: 0;
+/*	margin-right: 2px; */
+	padding: 3px 10px 3px 10px;
+/* 	padding: 5px; */
+}
+
+ul.ulContent li.active {
+	background-color: #1A69CE;
+}
+
+ul.ulContent li.active a {
+	color: #FFF;
+}
+
+ul.ulContent li a {
+	display: block;
+	text-decoration: none;
+}
+
+footer {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: #EFEFEF;
+	padding-top: 8px;
+	padding-bottom: 8px;
+	overflow: visible;
+	border-top: 15px solid #FFF;
+}
+
+footer .container {
+	text-align: center;
+}
+
+footer ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+footer ul li {
+	border-right: 1px solid #CCC;
+	display: inline-block;
+	font-size: 0.8em;
+	/* IE */
+	zoom: 1;
+	*display: inline;
+}
+
+footer ul li.last {
+	border-right: none;
+	padding: 5px;
+}
+
+footer ul li a {
+	display: block;
+	padding: 5px;
+	text-decoration: none;
+	color: #333;
+}
+
+footer ul li a:hover {
+	color: #1A69CE;
+}
+
+input[type="text"], input[type="password"] {border: 2px solid #CCC}
+
+input[type="text"]:focus, input[type="password"]:focus {
+	/* border: 2px solid #1A69CE; */
+}
+
+select {border: 2px solid #CCC; padding: 3px}
+
+.error {color: red}
+.success {color: green}
+
+form.formCentered label, form.formCentered2Cols label {
+	float: left;
+	text-align: right;
+	padding-right: 2%;
+	width: 48%;
+	font-weight: bold;
+	padding: 3px;
+}
+
+form.formCentered > div > div, form.formCentered2Cols > div > div > div {
+	float: right;
+	text-align: left;
+	width: 50%;
+}
+
+form.formCentered > div, form.formCentered2Cols > div > div {
+	clear: both;
+	padding: 10px;
+}
+
+form.formCentered input, form.formCentered2Cols input {padding: 3px}
+form.formCentered input.button, form.formCentered2Cols input.button {padding: 8px}
+
+input.email, input.address {width: 15em}
+
+.button {
+	color: #FFF;
+	font-weight: bold;
+	background-color: #1A69CE;
+	padding: 8px;
+	outline: none;
+	font-size: 1em;
+}
+
+a.button {
+	margin: 0;
+	text-decoration: none;
+	border: 2px solid rgb(221, 221, 221);
+}
+
+a.button:hover {
+	color: #FFF;
+}
+
+h1 a.button {font-size: 50%}
+	
+span.separator {
+	margin-left: 12px;
+	margin-right: 12px;
+	border-right: 1px solid #CCC;
+}
+
+#contactsContainer {padding: 10px; background-color: #F8F8F8}
+
+#contactsList {list-style-type: none; margin: 0; padding: 0}
+#contactsList > li {clear: both; margin: 0; padding: 12px 0 12px 0; border-top: 2px solid #FFF}
+
+.contactAvatar {float: left}
+.contactAvatar img {width: 40px; height: 40px; border: 1px solid #FFF}
+
+.contactDate {font-size: 70%}
+
+.contactContainer {margin-left: 50px; min-height: 40px}
+.contactContainer > span {display: inline-block}
+.contactContainer a.button {font-size: 70%}
+
+#formPost > textarea {padding: 5px; border: 2px solid #CCC; width: 98%}
+
+#pager {text-align: center; font-size: 80%}
+#pager a {margin: 1px; padding: 5px; background-color: #FFF}
+#pager a.current {color: #333; background: none; text-decoration: none; font-weight: bold; cursor: default}
+
+#formFilters {float: right; font-size: 70%}
+#formFilters select {margin-left: 5px}
+#formFilters input[type="text"] {padding: 3px; width: 100px}
+
+.tooltip {margin-left: 10px; display: none; font-size: small}
+input:focus + .tooltip, select:focus + .tooltip {display: inline}
+
+#btnShowPost {padding: 10px}
+
+.contactDetails {font-size: 90%}
