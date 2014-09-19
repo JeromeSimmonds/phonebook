@@ -16,15 +16,15 @@ import com.jeromesimmonds.phonebook.core.be.Findings;
  */
 public interface BaseBO<T, K extends Serializable> {
 
-	public T load(K pKey) throws CoreException;
+	public T load(K key) throws CoreException;
 	
-	public T load(K pKey, List<Fetch> pFetchGroup) throws CoreException;
+	public T load(K key, List<Fetch> fetchGroup) throws CoreException;
 	
-	public T save(T pBE) throws CoreException;
+	public T save(T entity) throws CoreException;
 	
-	public void delete(T pBE) throws CoreException;
+	public void delete(T entity) throws CoreException;
 
-	public Findings<T> find(FindParameters pParams) throws CoreException;
+	public Findings<T> find(FindParameters params) throws CoreException;
 	
-	public List<T> save(Iterable<T> pBEs) throws CoreException;
+	public List<T> save(Iterable<T> entities) throws CoreException;
 }
