@@ -12,18 +12,18 @@
 
 <!-- 	<beans profile="default"> -->
 		<bean id="placeholderConfig" class="org.springframework.context.support.PropertySourcesPlaceholderConfigurer">
-	        <property name="locations">
-	        	<list>
-	        		<!-- <value>/WEB-INF/config.properties</value> -->
-	        		<value>classpath:app.properties</value>
-	        		<bean class="org.springframework.jndi.JndiObjectFactoryBean">
-		  				<property name="jndiName" value="java:/comp/env/config/properties" />	
-		  			</bean>
-	        	</list>
-	        </property>
-	        <property name="order" value="1"/>
-	        <property name="fileEncoding" value="utf-8"/>
-	    </bean>
+			<property name="locations">
+				<list>
+					<!-- <value>/WEB-INF/config.properties</value> -->
+					<value>classpath:app.properties</value>
+					<bean class="org.springframework.jndi.JndiObjectFactoryBean">
+						<property name="jndiName" value="java:/comp/env/config/properties" />	
+					</bean>
+				</list>
+			</property>
+			<property name="order" value="1"/>
+			<property name="fileEncoding" value="utf-8"/>
+		</bean>
 	
 		<!-- <bean id="propertyInjectBeanPostProcessor" class="com.jeromesimmonds.phonebook.web.spring.PropertyInjectBeanPostProcessor" /> -->
 

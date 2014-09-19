@@ -16,8 +16,8 @@
 <!-- 				<prop key="mail.smtp.host">smtp.gmail.com</prop> -->
 <!-- 				<prop key="mail.smtp.port">587</prop> -->
 				<prop key="mail.debug">true</prop> 
-	           	<prop key="mail.smtp.auth">${mail.smtp.auth}</prop>
-	           	<prop key="mail.smtp.starttls.enable">${mail.smtp.starttls}</prop>
+				<prop key="mail.smtp.auth">${mail.smtp.auth}</prop>
+				<prop key="mail.smtp.starttls.enable">${mail.smtp.starttls}</prop>
 	       	</props>
 		</property>
 	</bean>
@@ -27,7 +27,7 @@
 			<props>
 				<prop key="runtime.log">${catalina.base}/logs/velocity.log</prop>
 				<prop key="resource.loader">class</prop>
-            	<prop key="class.resource.loader.class">org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader</prop>
+				<prop key="class.resource.loader.class">org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader</prop>
 			</props>
 		</property>
 	</bean>
