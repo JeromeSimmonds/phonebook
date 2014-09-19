@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd"
+  version="2.0">
+	<description>functions library</description>
+	<display-name>functions</display-name>
+	<tlib-version>2.0</tlib-version>
+	<short-name>jspb</short-name>
+	<uri>http://phonebook.jeromesimmonds.com/f</uri>
+	
+	<function>
+		<description>
+			Slugify
+		</description>
+	    <name>slugify</name>
+		<function-class>com.jeromesimmonds.phonebook.web.tag.Functions</function-class>
+		<function-signature>java.lang.String slugify(java.lang.String)</function-signature>
+		<example>
+			${jspb:slugify(text)}
+		</example>
+	</function>
+	
+	<function>
+		<description>
+			Encode URLs
+		</description>
+	    <name>urlEncode</name>
+		<function-class>com.jeromesimmonds.phonebook.web.tag.Functions</function-class>
+		<function-signature>java.lang.String urlEncode(java.lang.String, java.lang.String)</function-signature>
+		<example>
+			${jspb:urlEncode(url, 'UTF-8')}
+		</example>
+	</function>
+
+	<function>
+		<description>
+			Returns the phone number type
+		</description>
+	    <name>phoneNumberType</name>
+		<function-class>com.jeromesimmonds.phonebook.web.tag.Functions</function-class>
+		<function-signature>java.lang.String phoneNumberType(com.jeromesimmonds.phonebook.core.be.PhoneNumber)</function-signature>
+		<example>
+			${jspb:phoneNumberType(phoneNumber)}
+		</example>
+	</function>
+</taglib>
