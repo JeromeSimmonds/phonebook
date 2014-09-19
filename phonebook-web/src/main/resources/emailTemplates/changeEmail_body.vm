@@ -1,0 +1,1 @@
+Your email address has been changed!<br /><br />Please confirm: <a href="http://localhost:8080/emailChanged/${token}">http://localhost:8080/emailChanged/${token}</a><br /><br />Thanks for being a member!

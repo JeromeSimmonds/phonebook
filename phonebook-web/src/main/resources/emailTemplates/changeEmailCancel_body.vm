@@ -1,0 +1,1 @@
+Your email address has been changed<br /><br />You can cancel (as long as it has not been confirmed): <a href="http://localhost:8080/emailChanged/cancel/${token}">http://localhost:8080/emailChanged/cancel/${token}</a><br /><br />Thanks for being a member!

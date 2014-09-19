@@ -1,0 +1,1 @@
+Welcome!<br /><br />Please confirm your account by clicking the link below:<br /><a href="http://${domain}/signup/${token}">http://${domain}/signup/${token}</a><br /><br />Thanks for signing up!

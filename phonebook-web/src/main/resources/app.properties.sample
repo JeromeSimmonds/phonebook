@@ -1,0 +1,9 @@
+# ######################################
+# Platform-independent properties
+# ######################################
+# WARNING! Do NOT specify anything that could be used to access a privileged environment (e.g. Amazon Access and Secret keys).
+# Those keys should be specified in the production environment and placed according to the JNDI config/properties (see ROOT.xml and an example in etc/jetty/jetty-env.xml)
+#
+
+domain=localhost:8080
+avatar.path=http://xxx.s3.amazonaws.com/

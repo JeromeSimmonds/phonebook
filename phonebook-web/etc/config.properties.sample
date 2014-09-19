@@ -1,0 +1,19 @@
+# DB
+db.driver=com.mysql.jdbc.Driver
+db.url=jdbc:mysql://localhost:3306/phonebook?zeroDateTimeBehavior=convertToNull
+db.username=
+db.password=
+
+# S3 Params
+aws.accesskey=
+aws.securitykey=
+
+# Email Params
+mail.from.contact=
+mail.from.noreply=
+mail.username=
+mail.password=
+mail.host=
+mail.port=
+mail.smtp.auth=
+mail.smtp.starttls=

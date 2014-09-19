@@ -1,0 +1,42 @@
+<configuration>
+	<!-- <conversionRule conversionWord="sample" converterClass="net.sourceforge.ext4j.log.logback.QueryStringConverter" 
+		/> -->
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder class="ch.qos.logback.core.encoder.LayoutWrappingEncoder">	
+			<layout class="ch.qos.logback.classic.PatternLayout">
+				<param name="Pattern" value="%date{yyyy-MM-dd'T'HH:mm:ss.SSS}::%-5level::%c::%msg%n" />
+			</layout>
+			<!--
+			<layout class="net.sourceforge.ext4j.log.logback.ExtPatternLayout">
+				<param name="Pattern" value="%-4relative::%thread::%r::%-5level::%a::%msg%n" />
+			</layout>
+			-->
+		</encoder>
+	</appender>
+
+	<appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${catalina.base}/logs/phonebook-web.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<!-- daily rollover -->
+			<fileNamePattern>${catalina.base}/logs/phonebook-web.%d{yyyy-MM-dd}.log</fileNamePattern>
+			<!-- keep 30 days' worth of history -->
+			<maxHistory>30</maxHistory>
+		</rollingPolicy>
+
+		<encoder>
+			<pattern>%date{yyyy-MM-dd'T'HH:mm:ss.SSS}::%-5level::%c::%msg%n</pattern>
+		</encoder>
+	</appender>
+
+	<!-- <layout class="ch.qos.logback.access.PatternLayout"> -->
+	<!-- <param name="Pattern" value="common"/> -->
+	<!-- </layout> -->
+	
+	
+	<logger name="com.jeromesimmonds.phonebook.web" level="DEBUG"/>
+	
+	<root level="DEBUG">
+		<appender-ref ref="FILE" />
+		<!-- <appender-ref ref="STDOUT" /> -->
+	</root>
+</configuration>
