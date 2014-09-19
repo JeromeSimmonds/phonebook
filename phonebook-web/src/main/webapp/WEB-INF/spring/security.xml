@@ -27,6 +27,7 @@
 		<intercept-url pattern="/login*" access="!isAuthenticated()" /><!-- requires-channel="https" -->
 		<intercept-url pattern="/signup/**" access="!isAuthenticated()" /><!-- requires-channel="https" -->
 		<intercept-url pattern="/forgotPassword*" access="!isAuthenticated()" /><!-- requires-channel="https" -->
+		<intercept-url pattern="/emailChanged" access="!isAuthenticated()" />
 		<intercept-url pattern="/R/check*" access="!isAuthenticated()" />
 		<intercept-url pattern="/account/**" access="isAuthenticated()" /><!-- requires-channel="https" -->
 		<intercept-url pattern="/**" access="isAuthenticated()" />
