@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd"
+[
+ <!ENTITY baseDir "/WEB-INF/views">
+ <!ENTITY layoutDir "/WEB-INF/views/layouts">
+]>
+<tiles-definitions>
+
+	<!-- Base definition -->
+	<definition name="baseLayout" template="&layoutDir;/layout.jsp">
+		<put-attribute name="header" value="&layoutDir;/header.jsp" />
+		<put-attribute name="footer" value="&layoutDir;/footer.jsp" />
+		<put-attribute name="footerScripts" value="&layoutDir;/blank.jsp" />
+		<put-attribute name="body" value="&layoutDir;/blank.jsp" />
+		<put-attribute name="bodyOnLoad" value="" />
+		<put-attribute name="bodyOnUnLoad" value="" />
+		<put-attribute name="bodyId" value="_body_" />
+		<put-attribute name="metaDescription" value="" />
+		<put-attribute name="metaKeywords" value="" />
+		<put-attribute name="metaDescription" value="" />
+		<put-attribute name="h1" value="" />
+		<put-attribute name="title" value="Phonebook" />
+		<put-attribute name="navItem" value="" />
+		<put-attribute name="containerClass" value="" />
+	</definition>
+
+	<!-- Extension -->
+	<definition name="extensionLayout" template="&layoutDir;/layoutExtension.jsp">
+	</definition>
+	
+</tiles-definitions>
