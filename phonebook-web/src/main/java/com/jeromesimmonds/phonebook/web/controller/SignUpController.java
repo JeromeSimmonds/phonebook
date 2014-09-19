@@ -37,6 +37,10 @@ import com.jeromesimmonds.phonebook.web.form.SignUpForm;
 import com.jeromesimmonds.phonebook.web.helper.EmailHelper;
 import com.jeromesimmonds.phonebook.web.validator.SignUpValidator;
 
+/**
+ * @author Jerome Simmonds
+ *
+ */
 @Controller
 @RequestMapping("/signup")
 public class SignUpController {
@@ -51,14 +55,14 @@ public class SignUpController {
 	private EmailHelper emailHelper;
 	@Autowired
 	private MessageSource messageSource;
-    @Autowired
-    private SignUpValidator signUpValidator;
-     
-    @InitBinder
-    private void initBinder(WebDataBinder binder) {
-        binder.setValidator(signUpValidator);
-    }
-    
+	@Autowired
+	private SignUpValidator signUpValidator;
+
+	@InitBinder
+	private void initBinder(WebDataBinder binder) {
+		binder.setValidator(signUpValidator);
+	}
+
 	@RequestMapping(method = RequestMethod.GET)
 	public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) {
 		ModelAndView mav = new ModelAndView(Constants.VIEW_SIGNUP);
@@ -70,8 +74,7 @@ public class SignUpController {
 	public ModelAndView onSubmit(@Valid @ModelAttribute(Constants.COMMAND) SignUpForm form, BindingResult result, RedirectAttributes redirectAttrs) throws Exception {
 		if (result.hasErrors()) {
 			// log error?
-			ModelAndView mav = new ModelAndView(Constants.VIEW_SIGNUP);
-			return mav;
+			return new ModelAndView(Constants.VIEW_SIGNUP);
 		}
 
 		User user = new User();
