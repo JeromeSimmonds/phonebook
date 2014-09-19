@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE tiles-definitions PUBLIC
+	"-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN"
+	"http://tiles.apache.org/dtds/tiles-config_2_1.dtd"
+[
+ <!ENTITY baseDir "/WEB-INF/views">
+ <!ENTITY layoutDir "/WEB-INF/layouts">
+]>
+
+<tiles-definitions>
+
+	<!-- Data Access Failure -->
+	<definition name="dataAccessFailure" extends="baseLayout">
+		<put-attribute name="body" value="&baseDir;/inc/incDataAccessFailure.jsp" />
+		<put-attribute name="bodyId" value="dataAccessFailure" />
+		<put-attribute name="title" value="Data Access Failure" />
+		<put-attribute name="h1" value="Error accessing data" />
+	</definition>
+
+	<!-- Resource Not Found -->
+	<definition name="resourceNotFound" extends="baseLayout">
+		<put-attribute name="body" value="&baseDir;/inc/incResourceNotFound.jsp" />
+		<put-attribute name="bodyId" value="resourceNotFound" />
+		<put-attribute name="title" value="Resource Not Found" />
+		<put-attribute name="h1" value="Could not find resource" />
+	</definition>
+
+	<!-- Uncaught Exception -->
+	<definition name="uncaughtException" extends="baseLayout">
+		<put-attribute name="body" value="&baseDir;/inc/incUncaughtException.jsp" />
+		<put-attribute name="bodyId" value="uncaughtException" />
+		<put-attribute name="title" value="Unexpected Error" />
+		<put-attribute name="h1" value="Unexpected error occurred" />
+	</definition>
+
+	<!-- Log In -->
+	<definition name="login" extends="baseLayout">
+		<put-attribute name="body" value="&baseDir;/inc/incLogin.jsp" />
+		<put-attribute name="navItem" value="login" />
+		<put-attribute name="containerClass" value="center" />
+	</definition>
+
+	<!-- Sign Up -->
+	<definition name="signup" extends="baseLayout">
+		<put-attribute name="body" value="&baseDir;/inc/incSignup.jsp" />
+		<put-attribute name="footerScripts" value="&baseDir;/inc/incSignupScripts.jsp" />
+		<put-attribute name="navItem" value="signup" />
+		<put-attribute name="containerClass" value="center" />
+	</definition>
+
+	<!-- Forgot password -->
+	<definition name="forgotPassword" extends="baseLayout">
+		<put-attribute name="body" value="&baseDir;/inc/incForgotPassword.jsp" />
+		<put-attribute name="navItem" value="forgotPassword" />
+		<put-attribute name="containerClass" value="center" />
+	</definition>
+
+	<!-- Email changed -->
+	<definition name="emailChanged" extends="baseLayout">
+		<put-attribute name="body" value="&baseDir;/inc/incEmailChanged.jsp" />
+	</definition>
+	
+	<!-- Account -->
+	<definition name="account" extends="baseLayout">
+		<put-attribute name="body" value="&baseDir;/inc/incAccount.jsp" />
+		<put-attribute name="footerScripts" value="&baseDir;/inc/incAccountScripts.jsp" />
+		<put-attribute name="navItem" value="account" />
+		<put-attribute name="containerClass" value="center" />
+	</definition>
+				
+	<!-- Contacts Page -->
+	<definition name="contacts" extends="baseLayout">
+		<put-attribute name="body" value="&baseDir;/inc/incContacts.jsp" />
+		<put-attribute name="footerScripts" value="&baseDir;/inc/incContactsScripts.jsp" />
+		<put-attribute name="navItem" value="contacts" />
+	</definition>
+
+	<!-- New/Edit contact -->
+	<definition name="post" extends="baseLayout">
+		<put-attribute name="body" value="&baseDir;/inc/incPost.jsp" />
+		<put-attribute name="footerScripts" value="&baseDir;/inc/incPostScripts.jsp" />
+		<put-attribute name="navItem" value="postContact" />
+		<put-attribute name="containerClass" value="center" />
+	</definition>
+	
+</tiles-definitions>
