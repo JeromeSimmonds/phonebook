@@ -14,7 +14,7 @@ import com.amazonaws.services.s3.model.S3Object;
  */
 public interface AWSHelper {
 	
-	PutObjectResult upload(String bucketName, String key, InputStream inputStream, ObjectMetadata metadata);
+	PutObjectResult upload(String bucketName, String key, InputStream inputStream);
 	
 	void delete(String bucketName, String key);
 	

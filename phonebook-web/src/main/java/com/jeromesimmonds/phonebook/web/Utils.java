@@ -42,4 +42,13 @@ public class Utils {
 		if (LOGGER.isDebugEnabled()) LOGGER.debug("Getting user IP: " + result);
 		return result;
 	}
+	
+	public static String getRandomImageName(String currentImageName) {
+		String extension = null;
+		if (currentImageName.lastIndexOf(Constants.PERIOD) > -1) {
+			extension = currentImageName.substring(currentImageName.lastIndexOf(Constants.PERIOD), currentImageName.length());
+		}
+	    RandomGUID guid = new RandomGUID(true);
+	    return guid.toString().replace(Constants.DASH, Constants.EMPTY) + extension;
+	}
 }

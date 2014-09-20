@@ -29,7 +29,8 @@ public class AWSHelperImpl implements AWSHelper {
 	private AmazonS3 s3Client;
 	
 	@Override
-	public PutObjectResult upload(String bucketName, String key, InputStream inputStream, ObjectMetadata metadata) {
+	public PutObjectResult upload(String bucketName, String key, InputStream inputStream) {
+		ObjectMetadata metadata = new ObjectMetadata();
 		metadata.setHeader(X_AMZ_ACL, PUBLIC_READ);
 		PutObjectRequest request = new PutObjectRequest(bucketName, key, inputStream, metadata);
 		return s3Client.putObject(request);
