@@ -44,9 +44,9 @@ Create the database and insert the test data if you want a demo (phonebook-core/
 
 Update the config: rename phonebook-web/etc/config.properties.sample and phonebook-web/src/main/resources/app.properties.sample (remove ".sample") and change the properties accordingly.  
 
-Run Jetty:  
-```mvn clean install```  
+Run Jetty, with the command line, in phonebook-web:  
+```mvn clean jetty:run```  
 
 Wesbsite should be accessible at http://localhost:8080
 
-This is Work in progress... (web service using Jersey + OAuth2, Solr for search).
+**This is a work in progress... (coming soon: web service using Jersey + OAuth2, Solr for search).**
