@@ -7,8 +7,11 @@
 
 <h1><spring:message code="label_contacts" /> <a href="/search" class="button right"><spring:message code="label_search_contacts" /></a><a href="/post" class="button right"><spring:message code="label_new_contact" /></a></h1>
 
-<c:if test="${!empty flashOk && flashOk == 'confirmation'}">
-<p class="success"><spring:message code="txt_contact_saved" /></p>
+<c:if test="${!empty flashOk}">
+<c:choose>
+<c:when test="${flashOk == 'confirmation'}"><p class="success"><spring:message code="txt_contact_saved" /></p></c:when>
+<c:when test="${flashOk == 'deleted'}"><p class="success"><spring:message code="txt_contact_deleted" /></p></c:when>
+</c:choose>
 </c:if>
 
 <c:choose>
@@ -33,7 +36,7 @@
 					<c:forEach items="${contact.phoneNumbers}" var="phone"><br /><span style="text-transform: capitalize">${jspb:phoneNumberType(phone)}:</span> <strong>${phone.number}</strong></c:forEach></span>
 					<br /><span class="contactDate">Created <fmt:formatDate value="${contact.created}" pattern="yyyy/MM/dd hh:mm:ss"/></span>
 				</span>
-				<a href="/post?id=${contact.id}" class="button right"><spring:message code="label_edit" /></a> <a href="/delete?id=${contact.id}" class="button right"><spring:message code="label_delete" /></a>
+				<a href="/post?id=${contact.id}" class="button right"><spring:message code="label_edit" /></a> <a href="/delete?id=${contact.id}" class="button right btnDelete"><spring:message code="label_delete" /></a>
 			</div>
 		</li>
 		</c:forEach>
@@ -44,6 +47,6 @@
 </div>
 </c:when>
 <c:otherwise>
-<h2 style="margin-top: 20px"><spring:message code="txt_no_contactsNo contacts found" />.</h2>
+<h2 style="margin-top: 20px"><spring:message code="txt_no_contacts" />.</h2>
 </c:otherwise>
 </c:choose>
