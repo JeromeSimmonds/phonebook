@@ -12,4 +12,6 @@ import com.jeromesimmonds.phonebook.core.be.PhoneNumber;
 public interface PhoneNumberBO extends BaseBO<PhoneNumber, Integer> {
 	
 	public List<PhoneNumber> findForContact(Contact contact);
+
+	public void deleteForContact(Contact contact);
 }

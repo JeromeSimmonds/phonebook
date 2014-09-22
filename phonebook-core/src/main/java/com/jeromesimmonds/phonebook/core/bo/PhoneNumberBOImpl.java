@@ -29,4 +29,9 @@ public class PhoneNumberBOImpl extends AbstractBO<PhoneNumber, Integer, PhoneNum
 			.with(FindFilterType.Contact, contact);
 		return getDAO().findAll(newSpecification(params));
 	}
+
+	@Override
+	public void deleteForContact(Contact contact) {
+		getDAO().deleteForContact(contact);
+	}
 }

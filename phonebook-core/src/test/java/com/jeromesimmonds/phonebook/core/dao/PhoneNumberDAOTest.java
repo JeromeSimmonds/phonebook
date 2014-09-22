@@ -62,4 +62,26 @@ public class PhoneNumberDAOTest extends AbstractDAOTest {
 		assertNotNull(results);
 		assertEquals(1, results.size());
 	}
+
+	@Test
+	public void deleteForContact() throws Exception {
+		FindParameters params = new FindParameters(1, 10)
+			.with(FindFilterType.Contact, TestData.CONTACT_1);
+		
+		List<PhoneNumber> results = dao.findAll(new PhoneNumberFindSpecification(params));
+		assertNotNull(results);
+		assertEquals(2, results.size());
+		
+		dao.deleteForContact(TestData.CONTACT_1);
+		
+		results = dao.findAll(new PhoneNumberFindSpecification(params));
+		assertEquals(0, results.size());
+		
+		// check that other phone numbers still exist in database
+		params = new FindParameters(1, 10)
+			.with(FindFilterType.Contact, TestData.CONTACT_2);
+		results = dao.findAll(new PhoneNumberFindSpecification(params));
+		assertNotNull(results);
+		assertEquals(1, results.size());
+	}
 }
