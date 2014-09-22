@@ -36,6 +36,17 @@ Reset the test database: with the command line, in phonebook-core, run
 Install the core project: with the command line, in phonebook-core, run  
 ```mvn clean install```
 
-Tests will be run.
+Tests will be run.  
 
-In progress...
+**Running the website**  
+
+Create the database and insert the test data if you want a demo (phonebook-core/src/test/db/testdata.sql) or you can run ```mvn db-migration:reset -Pxxx``` where xxx is your dev profile.  
+
+Update the config: rename phonebook-web/etc/config.properties.sample and phonebook-web/src/main/resources/app.properties.sample (remove ".sample") and change the properties accordingly.  
+
+Run Jetty:  
+```mvn clean install```  
+
+Wesbsite should be accessible at http://localhost:8080
+
+This is Work in progress... (web service using Jersey + OAuth2, Solr for search).
