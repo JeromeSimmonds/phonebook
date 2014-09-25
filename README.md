@@ -1,6 +1,7 @@
 phonebook
 =========
-**Demo for you guys who ask me if I have a GitHub account to show you some code ;-)**
+**Demo for you guys who ask me if I have a GitHub account to show you some code ;-)**  
+At the same time I encourage you guys to read this interesting article: https://blog.jcoglan.com/2013/11/15/why-github-is-not-your-cv/
 
 ## Description
 Insanely complex Java implementation of a simple online multi-users phonebook.  
@@ -49,4 +50,4 @@ Run Jetty, with the command line, in phonebook-web:
 
 Wesbsite should be accessible at http://localhost:8080
 
-**This is a work in progress... (coming soon: web service using Jersey + OAuth2, Solr for search).**
+**This is a work in progress...** (coming soon: web service using Jersey + OAuth2, Solr for search).

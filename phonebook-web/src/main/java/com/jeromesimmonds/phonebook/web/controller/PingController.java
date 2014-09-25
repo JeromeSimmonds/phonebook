@@ -16,8 +16,8 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping("/ping")
 public class PingController {
 
-	public ModelAndView ping(HttpServletResponse pResponse) throws Exception {
-		pResponse.getWriter().println(new Date());
+	public ModelAndView ping(HttpServletResponse response) throws Exception {
+		response.getWriter().println(new Date());
 		return null;
 	}
 }
