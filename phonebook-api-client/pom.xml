@@ -1,0 +1,32 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	
+	<groupId>com.jeromesimmonds</groupId>
+	<artifactId>phonebook-api-client</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<packaging>jar</packaging>
+	
+	<parent>
+		<groupId>com.jeromesimmonds</groupId>
+		<artifactId>phonebook</artifactId>
+		<version>1.0.0</version>
+	</parent>
+
+	<properties>
+		<phonebook-api-core.version>1.0.0-SNAPSHOT</phonebook-api-core.version>
+		<jersey.version>2.12</jersey.version>
+	</properties>
+		
+	<dependencies>
+		<dependency>
+			<groupId>com.jeromesimmonds</groupId>
+			<artifactId>phonebook-api-core</artifactId>
+			<version>${phonebook-api-core.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.glassfish.jersey.core</groupId>
+			<artifactId>jersey-client</artifactId>
+			<version>${jersey.version}</version>
+		</dependency>
+	</dependencies>
+</project>
