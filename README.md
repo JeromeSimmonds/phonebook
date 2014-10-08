@@ -14,7 +14,7 @@ Users need to log in to see and manage their contacts.
 * Jetty
 
 ## Prerequisites
-JDK 1.6 or above, Maven, MySQL 5.x
+JDK 1.7 or above, Maven 3, MySQL 5.x
 
 ## Repository structure
 * **phonebook** Maven parent project
