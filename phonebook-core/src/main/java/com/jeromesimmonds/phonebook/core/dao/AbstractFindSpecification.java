@@ -40,11 +40,11 @@ public abstract class AbstractFindSpecification<T> implements Specification<T>, 
 	
 	@Override
 	public Pageable toPageable() {
-		int oPageSize = Math.abs(parameters.getTo() - parameters.getFrom()) + 1;
-    	int oPageNumber = (parameters.getFrom() == parameters.getTo()) ? parameters.getFrom() - 1 : parameters.getFrom() / oPageSize;
+		int pageSize = Math.abs(parameters.getTo() - parameters.getFrom()) + 1;
+    	int pageNumber = (parameters.getFrom() == parameters.getTo()) ? parameters.getFrom() - 1 : parameters.getFrom() / pageSize;
     	Sort s = applySorts(parameters.getSorts());
-    	PageRequest oResult = new PageRequest(oPageNumber, oPageSize, s);
-    	return oResult;
+    	PageRequest result = new PageRequest(pageNumber, pageSize, s);
+    	return result;
 	}
 
 	private Sort applySorts(List<FindSort> sorts) {
@@ -58,59 +58,59 @@ public abstract class AbstractFindSpecification<T> implements Specification<T>, 
 
 	@Override
 	public Predicate toPredicate(Root<T> root, CriteriaQuery<?> query, CriteriaBuilder builder) {
-		Predicate oPredicate = builder.isTrue(builder.literal(Boolean.TRUE));
+		Predicate predicate = builder.isTrue(builder.literal(Boolean.TRUE));
 		for (FindFilter<?> f : parameters.getFilters()) {
-			oPredicate = builder.and(oPredicate, applyFilter(root, builder, f));
+			predicate = builder.and(predicate, applyFilter(root, builder, f));
 		}
-		return oPredicate;
+		return predicate;
 	}
 
-	private Predicate applyFilter(Root<T> pRoot, CriteriaBuilder pBuilder, FindFilter filter) {
+	private Predicate applyFilter(Root<T> root, CriteriaBuilder builder, FindFilter filter) {
 		switch (filter.getMode()) {
 			case Eq:
-				return pBuilder.equal(getField(pRoot, Object.class, filter.getType()), filter.getValue());
+				return builder.equal(getField(root, Object.class, filter.getType()), filter.getValue());
 			case GreaterOrEq:
 				Object oGEValue = filter.getValue();
 				if (oGEValue instanceof Date) {
-					return pBuilder.greaterThanOrEqualTo(getField(pRoot, Date.class, filter.getType()), (Date) filter.getValue());
+					return builder.greaterThanOrEqualTo(getField(root, Date.class, filter.getType()), (Date) filter.getValue());
 				} else {
-					return pBuilder.ge(getField(pRoot, Number.class, filter.getType()), (Number) filter.getValue());
+					return builder.ge(getField(root, Number.class, filter.getType()), (Number) filter.getValue());
 				}
 			case GreaterThan:
 				Object oGTValue = filter.getValue();
 				if (oGTValue instanceof Date) {
-					return pBuilder.greaterThan(getField(pRoot, Date.class, filter.getType()), (Date) filter.getValue());
+					return builder.greaterThan(getField(root, Date.class, filter.getType()), (Date) filter.getValue());
 				} else {
-					return pBuilder.gt(getField(pRoot, Number.class, filter.getType()), (Number) filter.getValue());
+					return builder.gt(getField(root, Number.class, filter.getType()), (Number) filter.getValue());
 				}			
 			case In:
-				return getField(pRoot, Collection.class, filter.getType()).in(getValues(filter));
+				return getField(root, Collection.class, filter.getType()).in(getValues(filter));
 			case IsNotNull:
-				return pBuilder.isNotNull(getField(pRoot, Object.class, filter.getType()));
+				return builder.isNotNull(getField(root, Object.class, filter.getType()));
 			case IsNull:
-				return pBuilder.isNull(getField(pRoot, Object.class, filter.getType()));
+				return builder.isNull(getField(root, Object.class, filter.getType()));
 			case LessOrEq:
 				Object oLEValue = filter.getValue();
 				if (oLEValue instanceof Date) {
-					return pBuilder.lessThanOrEqualTo(getField(pRoot, Date.class, filter.getType()), (Date) oLEValue);
+					return builder.lessThanOrEqualTo(getField(root, Date.class, filter.getType()), (Date) oLEValue);
 				} else {
-					return pBuilder.le(getField(pRoot, Number.class, filter.getType()), (Number) oLEValue);
+					return builder.le(getField(root, Number.class, filter.getType()), (Number) oLEValue);
 				}
 			case LessThan:
 				Object oLTValue = filter.getValue();
 				if (oLTValue instanceof Date) {
-					return pBuilder.lessThan(getField(pRoot, Date.class, filter.getType()), (Date) filter.getValue());
+					return builder.lessThan(getField(root, Date.class, filter.getType()), (Date) filter.getValue());
 				} else {
-					return pBuilder.lt(getField(pRoot, Number.class, filter.getType()), (Number) filter.getValue());
+					return builder.lt(getField(root, Number.class, filter.getType()), (Number) filter.getValue());
 				}
 			case Like:
-				return pBuilder.like(getField(pRoot, String.class, filter.getType()), (String) filter.getValue());
+				return builder.like(getField(root, String.class, filter.getType()), (String) filter.getValue());
 			case NotEq:
-				return pBuilder.notEqual(getField(pRoot, Object.class, filter.getType()), filter.getValue());
+				return builder.notEqual(getField(root, Object.class, filter.getType()), filter.getValue());
 			case NotIn:
-				return pBuilder.not(getField(pRoot, Collection.class, filter.getType()).in(filter.getValue()));
+				return builder.not(getField(root, Collection.class, filter.getType()).in(filter.getValue()));
 			case NotLike:
-				return pBuilder.like(getField(pRoot, String.class, filter.getType()), (String) filter.getValue());
+				return builder.like(getField(root, String.class, filter.getType()), (String) filter.getValue());
 			default:
 				throw new FilterNotSupportedException(filter, FilterProperty.Mode);
 		}
@@ -121,10 +121,10 @@ public abstract class AbstractFindSpecification<T> implements Specification<T>, 
 		Collection<?> filterValues = (Collection<?>) filter.getValue();
 		if (filterValues == null) return values;
 		if (filterValues.isEmpty()) return filterValues;
-		FindFilter<Object> oSameTypeFilter = new FindFilter<Object>(filter.getType(), FindFilterMode.Eq);
+		FindFilter<Object> sameTypeFilter = new FindFilter<Object>(filter.getType(), FindFilterMode.Eq);
 		for (Object o : filterValues) {
-			oSameTypeFilter.setValue(o);
-			values.add(oSameTypeFilter.getValue());
+			sameTypeFilter.setValue(o);
+			values.add(sameTypeFilter.getValue());
 		}
 		return values;
 	}
@@ -133,7 +133,7 @@ public abstract class AbstractFindSpecification<T> implements Specification<T>, 
 		return parameters;
 	}
 
-	protected abstract <S> Expression<S> getField(Root<T> pRoot, Class<S> pResultType, FindFilterType pType);
+	protected abstract <S> Expression<S> getField(Root<T> root, Class<S> resultType, FindFilterType type);
 	
-	protected abstract void applySort(FindSort pFindSort, List<Order> pOrders);
+	protected abstract void applySort(FindSort findSort, List<Order> orders);
 }
