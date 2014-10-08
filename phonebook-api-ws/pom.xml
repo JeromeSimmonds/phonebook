@@ -1,0 +1,81 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.jeromesimmonds</groupId>
+	<artifactId>phonebook-api-ws</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<packaging>war</packaging>
+
+	<parent>
+		<groupId>com.jeromesimmonds</groupId>
+		<artifactId>phonebook</artifactId>
+		<version>1.0.0</version>
+	</parent>
+
+	<properties>
+		<jetty.version>9.0.7.v20131107</jetty.version><!-- v9+ requires JVM 1.7, last version before Java 7: 8.1.16.v20140903, v9 -> Servlet 3.0 and JSP 2.2 -->
+		<jersey.version>2.12</jersey.version><!-- v2.6 is the last one compiled with Java SE 6 -->
+		<solrj.version>4.10.0</solrj.version>
+		<phonebook-api-core.version>1.0.0-SNAPSHOT</phonebook-api-core.version>
+	</properties>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.eclipse.jetty</groupId>
+				<artifactId>jetty-maven-plugin</artifactId>
+				<version>${jetty.version}</version>
+				<configuration>
+					<httpConnector>
+						<port>8982</port>
+					</httpConnector>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.glassfish.jersey.core</groupId>
+			<artifactId>jersey-server</artifactId>
+			<version>${jersey.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.glassfish.jersey.containers</groupId>
+			<artifactId>jersey-container-servlet</artifactId>
+			<version>${jersey.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.glassfish.jersey.media</groupId>
+			<artifactId>jersey-media-json-jackson</artifactId>
+			<version>${jersey.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.solr</groupId>
+			<artifactId>solr-solrj</artifactId>
+			<version>${solrj.version}</version>
+		</dependency>
+<!-- 		<dependency> -->
+<!-- 			<groupId>org.glassfish.jersey.containers</groupId> -->
+<!-- 			<artifactId>jersey-container-jetty-http</artifactId> -->
+<!-- 			<version>${jersey.version}</version> -->
+<!-- 		</dependency> -->
+
+		<dependency>
+			<groupId>com.jeromesimmonds</groupId>
+			<artifactId>phonebook-api-core</artifactId>
+			<version>${phonebook-api-core.version}</version>
+		</dependency>
+		<!-- Spring stuff -->
+		<dependency>
+			<groupId>org.glassfish.jersey.ext</groupId>
+			<artifactId>jersey-spring3</artifactId>
+			<version>${jersey.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-logging</groupId>
+			<artifactId>commons-logging</artifactId>
+			<version>1.2</version>
+		</dependency>
+	</dependencies>
+</project>
