@@ -13,7 +13,7 @@
 
 	<context:property-placeholder location="classpath*:*.properties" />
 
-	<bean id="com.jeromesimmonds.phonebook.core._DataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+	<bean id="com.jeromesimmonds.phonebook.core._DataSource" class="org.apache.commons.dbcp2.BasicDataSource" destroy-method="close">
     	<property name="driverClassName" value="com.mysql.jdbc.Driver"/>
     	<property name="url" value="jdbc:mysql://localhost:3306/${db.schema}?zeroDateTimeBehavior=convertToNull"/>
     	<property name="username" value="${db.username}"/>
