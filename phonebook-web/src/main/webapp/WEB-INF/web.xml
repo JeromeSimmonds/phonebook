@@ -101,11 +101,6 @@
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
 
-	<servlet-mapping>
-		<servlet-name>phonebook</servlet-name>
-		<url-pattern>/ping</url-pattern>
-	</servlet-mapping>
-	
 	<session-config>
 		<session-timeout>20</session-timeout>
 	</session-config>
