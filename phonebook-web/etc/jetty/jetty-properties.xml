@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<!DOCTYPE Configure PUBLIC "-//Jetty//Configure//EN" "http://www.eclipse.org/jetty/configure.dtd">
+<Configure id="wac" class="org.eclipse.jetty.webapp.WebAppContext">
+	<New id="ConfigProperties" class="org.eclipse.jetty.plus.jndi.EnvEntry">
+		<Arg>config/properties</Arg>
+		<Arg>
+			<New class="java.lang.String">
+				<Arg>file:etc/config.properties</Arg>
+			</New>
+		</Arg>
+	</New>
+</Configure>
