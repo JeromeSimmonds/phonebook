@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.jeromesimmonds.phonebook.core.bo.UserBO;
 import com.jeromesimmonds.phonebook.web.Constants;
-import com.jeromesimmonds.phonebook.web.be.APIResponse;
+import com.jeromesimmonds.phonebook.web.be.RESTResponse;
 
 /**
  * @author Jerome Simmonds
@@ -35,7 +35,7 @@ public class RESTCheckController {
 			@RequestParam(value=Constants.EMAIL, required=false) String email, 
 			@RequestParam(value=Constants.USERNAME, required=false) String username) {
 		
-		APIResponse<Map<String, Boolean>> response = new APIResponse<Map<String, Boolean>>();
+		RESTResponse<Map<String, Boolean>> response = new RESTResponse<Map<String, Boolean>>();
 		Map<String, Boolean> results = new HashMap<String, Boolean>();
 		
 		// returns true if email already exists

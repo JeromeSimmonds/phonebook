@@ -15,9 +15,9 @@ import com.fasterxml.jackson.databind.SerializationFeature;
  * @author Jerome Simmonds
  *
  */
-public class APIResponse<T> {
+public class RESTResponse<T> {
 	
-	private static final Logger LOGGER = LoggerFactory.getLogger(APIResponse.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(RESTResponse.class);
 	
 	public static final String JSON_ERROR = "{\"error\":{\"message\":\"An error occured while serializing data\",\"code\":1}}";
 	
