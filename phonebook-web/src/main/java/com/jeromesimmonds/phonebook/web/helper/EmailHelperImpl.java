@@ -27,7 +27,7 @@ import com.jeromesimmonds.phonebook.web.be.Email;
  */
 public class EmailHelperImpl implements EmailHelper {
 
-	private final Logger logger = LoggerFactory.getLogger(EmailHelperImpl.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(EmailHelperImpl.class);
 
 	private final String TEMPLATES_PATH = "emailTemplates/"; // in resources
 	private final String TEMPLATE_FORGOTPASSWORD = "forgotPassword";
@@ -93,7 +93,7 @@ public class EmailHelperImpl implements EmailHelper {
 			MimeMessagePreparator oPreparator = new MessagePreparator(email);
 			mailSender.send(oPreparator);
 		} catch (MailException e) {
-			logger.error("Error sending email (from: " + email.getFrom() + " to: " + email.getFrom() + ")", e);
+			LOGGER.error("Error sending email (from: " + email.getFrom() + " to: " + email.getFrom() + ")", e);
 			throw new Exception(e);
 		}
 	}
