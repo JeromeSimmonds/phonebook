@@ -10,9 +10,13 @@ import javax.ws.rs.container.ContainerResponseFilter;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.ext.Provider;
 
+/**
+ * @author Jerome Simmonds
+ *
+ */
 @Provider
 public class MediaTypeResponseFilter implements ContainerResponseFilter {
-	
+
 	private static final Pattern PATTERN_EXTENSION_XML = Pattern.compile("\\w+\\.xml($|/.?)");
 
 	@Override
