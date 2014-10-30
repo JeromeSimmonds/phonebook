@@ -27,22 +27,26 @@ public abstract class AbstractBO<T, K extends Serializable, S extends BaseDAO<T,
 
 	private S dao;
 
+	@Override
 	public T load(K key) throws CoreException {
 		return dao.findOne(key);
 	}
 
+	@Override
 	public T load(K key, List<Fetch> fetchGroup) throws CoreException {
 		T oResult = dao.findOne(key);
 		applyFetches(oResult, fetchGroup);
 		return oResult;
 	}
 
+	@Override
 	public T save(T entity) throws CoreException {
 		if (entity == null)
 			throw new CoreException("BE cannot be null.");
 		return dao.save(entity);
 	}
 
+	@Override
 	public void delete(T entity) throws CoreException {
 		if (entity == null)
 			throw new CoreException("BE cannot be null");
@@ -56,6 +60,7 @@ public abstract class AbstractBO<T, K extends Serializable, S extends BaseDAO<T,
 		return dao.save(entities);
 	}
 
+	@Override
 	public Findings<T> find(FindParameters params) throws CoreException {
 		if (params == null)
 			throw new CoreException("params can not be null.");
