@@ -1,7 +1,8 @@
 phonebook
 =========
 **Demo for you guys who ask me if I have a GitHub account to show you some code ;-)**  
-In the meantime I encourage you guys to read this interesting article: https://blog.jcoglan.com/2013/11/15/why-github-is-not-your-cv/
+In the meantime I encourage you guys to read this interesting article: https://blog.jcoglan.com/2013/11/15/why-github-is-not-your-cv/  
+**2016 update: I am reworking/upgrading the code (Java 8, JAX-RS, improved Maven config, new structure, etc.)**  
 
 ## Description
 Insanely complex Java implementation of a simple online multi-users phonebook.  
