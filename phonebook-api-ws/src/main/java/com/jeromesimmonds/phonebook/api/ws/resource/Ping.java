@@ -2,6 +2,7 @@ package com.jeromesimmonds.phonebook.api.ws.resource;
 
 import java.util.Date;
 
+import javax.annotation.security.PermitAll;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
@@ -13,6 +14,7 @@ import javax.ws.rs.core.Response;
  *
  */
 @Path("/ping")
+@PermitAll
 public class Ping {
 	
 	@GET
